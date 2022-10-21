@@ -12,13 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^4.9.2",
-    "fastify-swagger": "^5.2.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
-  "engines" : { 
-    "node" : ">=16.0.0 <17.0.0"
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
   }
 }

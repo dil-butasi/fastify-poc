@@ -4,17 +4,20 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "build:watch": "tsc --w",
+    "start": "tsc && ts-node ./dist/server.js",
+    "start:dev": "nodemon server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fastify": "^4.9.2",
+    "ts-node": "^10.9.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/node": "^18.11.7",
     "nodemon": "^2.0.20"
   },
   "engines": {

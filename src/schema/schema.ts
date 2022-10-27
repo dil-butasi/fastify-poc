@@ -1,10 +1,4 @@
-const {
-  getItems,
-  getItem,
-  addItem,
-  deleteItem,
-  updateItem,
-} = require('../controllers/items');
+import * as Controller from '../controllers/item';
 
 const Item = {
   type: 'object',
@@ -23,7 +17,7 @@ const getItemsOpts = {
       },
     },
   },
-  handler: getItems,
+  handler: Controller.getItems,
 };
 
 const getItemOpts = {
@@ -32,7 +26,7 @@ const getItemOpts = {
       200: Item,
     },
   },
-  handler: getItem,
+  handler: Controller.getItem,
 };
 
 const postItemOpts = {
@@ -48,7 +42,7 @@ const postItemOpts = {
       201: Item,
     },
   },
-  handler: addItem,
+  handler: Controller.addItem,
 };
 
 const deleteItemOpts = {
@@ -62,7 +56,7 @@ const deleteItemOpts = {
       },
     },
   },
-  handler: deleteItem,
+  handler: Controller.deleteItem,
 };
 
 const updateItemOpts = {
@@ -78,26 +72,13 @@ const updateItemOpts = {
       200: Item,
     },
   },
-  handler: updateItem,
+  handler: Controller.updateItem,
 };
 
-function itemRoutes(fastify, options, done) {
-  //Get all items
-  fastify.get('/items', getItemsOpts);
-
-  //Get single item
-  fastify.get('/items/:id', getItemOpts);
-
-  //Add item
-  fastify.post('/items', postItemOpts);
-
-  //Delete item
-  fastify.delete('/items/:id', deleteItemOpts);
-
-  //Update item
-  fastify.put('/items/:id', updateItemOpts);
-
-  done();
-}
-
-module.exports = itemRoutes;
+export {
+  getItemOpts,
+  getItemsOpts,
+  postItemOpts,
+  deleteItemOpts,
+  updateItemOpts,
+};

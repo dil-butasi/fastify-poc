@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify';
+import { REPL_MODE_SLOPPY } from 'repl';
 import * as Schema from '../schema/schema';
 
 async function routes(fastify: FastifyInstance) {
